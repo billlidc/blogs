@@ -1,0 +1,147 @@
+<h1 id="writing-latex-with-latex-workshop-in-vs-code">Writing LaTeX with
+LaTeX Workshop in VS Code</h1>
+<h3 id="steps">Steps</h3>
+<ol type="1">
+<li><p>Download &amp; Install <code>MacTex</code>: <a
+href="https://tug.org/mactex/mactex-download.html">Downloading MacTeX
+2024</a></p></li>
+<li><p>Install the extension <code>LaTeX Workshop</code> in VS Code</p>
+<ul>
+<li>PDF reading in VS Code is enabled once the extension is
+installed</li>
+</ul></li>
+<li><p>Press <code>Cmd</code> + <code>Shift</code> + <code>P</code>
+(macOS) in VS Code to show all commands and type in
+<code>Open User Settings JSON</code></p></li>
+<li><p>Copy and paste the snippets into the json file (inside the
+brackets {}).</p>
+<pre><code>{
+&quot;workbench.colorTheme&quot;: &quot;Visual Studio Dark&quot;,
+&quot;latex-workshop.latex.path&quot;: &quot;/Library/TeX/texbin/pdftex&quot;,
+&quot;latex-workshop.latex.tools&quot;: [
+    {
+     &quot;name&quot;: &quot;latexmk&quot;,
+     &quot;command&quot;: &quot;latexmk&quot;,
+     &quot;args&quot;: [
+      &quot;-synctex=1&quot;,
+      &quot;-interaction=nonstopmode&quot;,
+      &quot;-file-line-error&quot;,
+      &quot;-pdf&quot;,
+      &quot;-outdir=%OUTDIR%&quot;,
+      &quot;%DOC%&quot;
+     ],
+     &quot;env&quot;: {}
+    },
+    {
+     &quot;name&quot;: &quot;xelatex&quot;,
+     &quot;command&quot;: &quot;xelatex&quot;,
+     &quot;args&quot;: [
+      &quot;-synctex=1&quot;,
+      &quot;-interaction=nonstopmode&quot;,
+      &quot;-file-line-error&quot;,
+      &quot;%DOC%&quot;
+     ],
+     &quot;env&quot;: {}
+    },
+    {
+     &quot;name&quot;: &quot;pdflatex&quot;,
+     &quot;command&quot;: &quot;pdflatex&quot;,
+     &quot;args&quot;: [
+      &quot;-synctex=1&quot;,
+      &quot;-interaction=nonstopmode&quot;,
+      &quot;-file-line-error&quot;,
+      &quot;%DOC%&quot;
+     ],
+     &quot;env&quot;: {}
+    },
+    {
+     &quot;name&quot;: &quot;bibtex&quot;,
+     &quot;command&quot;: &quot;bibtex&quot;,
+     &quot;args&quot;: [
+      &quot;%DOCFILE%&quot;
+     ],
+     &quot;env&quot;: {}
+    }
+   ],
+   &quot;latex-workshop.latex.recipes&quot;: [
+    {
+     &quot;name&quot;: &quot;pdfLaTeX&quot;,
+     &quot;tools&quot;: [
+      &quot;pdflatex&quot;
+     ]
+    },
+    {
+     &quot;name&quot;: &quot;latexmk 🔃&quot;,
+     &quot;tools&quot;: [
+      &quot;latexmk&quot;
+     ]
+    },
+    {
+     &quot;name&quot;: &quot;xelatex&quot;,
+     &quot;tools&quot;: [
+      &quot;xelatex&quot;
+     ]
+    },
+    {
+     &quot;name&quot;: &quot;pdflatex ➞ bibtex ➞ pdflatex`×2&quot;,
+     &quot;tools&quot;: [
+      &quot;pdflatex&quot;,
+      &quot;bibtex&quot;,
+      &quot;pdflatex&quot;,
+      &quot;pdflatex&quot;
+     ]
+    },
+    {
+    &quot;name&quot;: &quot;xelatex ➞ bibtex ➞ xelatex`×2&quot;,
+    &quot;tools&quot;: [
+      &quot;xelatex&quot;,
+      &quot;bibtex&quot;,
+      &quot;xelatex&quot;,
+      &quot;xelatex&quot;
+     ]
+    }
+   ]       
+}</code></pre></li>
+<li><p>Troubleshooting
+<code>Recipe terminated with fatal error: spawn pdflatex ENOENT</code></p>
+<ul>
+<li><p>Check install path on macOS with <code>$ which pdftex</code>; If
+it doesn’t, you’ll have to re-install MacTeX.</p>
+<pre><code>(base) maverick@Daochens-MacBook-Pro ~ % which pdftex
+/Library/TeX/texbin/pdftex</code></pre></li>
+<li><p>Check LaTeX version: <code>latex -v</code>; Sample output is
+shown below.</p>
+<pre><code>(base) maverick@Daochens-MacBook-Pro ~ % latex -v
+pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2024)
+kpathsea version 6.4.0
+Copyright 2024 Han The Thanh (pdfTeX) et al.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the pdfTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the pdfTeX source.
+Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+Compiled with libpng 1.6.43; using libpng 1.6.43
+Compiled with zlib 1.3.1; using zlib 1.3.1
+Compiled with xpdf version 4.04</code></pre></li>
+<li><p>Relaunch VS Code after copying the snippets in step 4.</p></li>
+</ul></li>
+<li><p>Compile the file using <code>option</code> + <code>Cmd</code> +
+<code>B</code> (macOS)</p></li>
+</ol>
+<ul>
+<li>To uninstall MacTex: <a
+href="https://tug.org/mactex/uninstalling.html#:~:text=In%20the%20Finder">Uninstalling</a></li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://mathjiajia.github.io/vscode-and-latex/">A Fast
+Guide on Writing LaTeX with LaTeX Workshop in VS Code</a></li>
+<li><a
+href="https://tex.stackexchange.com/questions/79463/latex-install-path-on-os-x">LaTeX
+install path on OS X</a></li>
+<li><a
+href="https://stackoverflow.com/questions/72834326/latex-via-vs-code-macos-solving-recipe-terminated-with-fatal-error-spawn-lat">LaTeX
+via VS Code, macOS, solving ‘Recipe terminated with fatal error: spawn
+latexmk ENOENT.’ error</a></li>
+</ul>
