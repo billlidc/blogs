@@ -15,35 +15,23 @@ Journaled)</em></p>
 <h3 id="开机时长按command-r进入macos-utilities">2.
 开机时长按<code>Command</code> + <code>R</code>，进入<strong>macOS
 Utilities</strong></h3>
-<figure>
-<img src="./macos-utilities.jpeg" alt="macOS Utilities" />
-<figcaption aria-hidden="true">macOS Utilities</figcaption>
-</figure>
+<p><img src="./macos-utilities.jpeg" style="width:50.0%" /></p>
 <p>若进入<strong>Internet Recovery</strong>，本地Recovery
 Partition可能已经损坏，尝试走完Internet Recovery流程</p>
 <h3 id="进入disk-utility">3. 进入<strong>Disk Utility</strong></h3>
-<figure>
-<img src="./disk-utility.png" alt="Disk Utility" />
-<figcaption aria-hidden="true">Disk Utility</figcaption>
-</figure>
+<p><img src="./disk-utility.png" style="width:50.0%" /></p>
 <h3 id="接入u盘移动硬盘选择mount">4. 接入U盘/移动硬盘，选择Mount</h3>
 <p>如果格式不支持，需要格式化erase</p>
 <h3 id="macos-utilities---utilities---terminal打开终端">5. <strong>macOS
 Utilities</strong> - Utilities - Terminal，打开终端</h3>
-<figure>
-<img src="./terminal.jpeg" alt="Terminal" />
-<figcaption aria-hidden="true">Terminal</figcaption>
-</figure>
+<p><img src="./terminal.jpeg" style="width:50.0%" /></p>
 <h3 id="terminal-commands拷贝数据至u盘移动硬盘">6. Terminal
 commands拷贝数据至U盘/移动硬盘</h3>
 <p>查看所有磁盘，确保U盘/移动硬盘Mount成功</p>
 <pre><code>ls /Volumes</code></pre>
 <p>查看用户<code>maverick</code>目录下文件</p>
 <pre><code>ls /Volumes/Macintosh\ HD/Users/maverick</code></pre>
-<figure>
-<img src="./files.jpeg" alt="Files" />
-<figcaption aria-hidden="true">Files</figcaption>
-</figure>
+<p><img src="./files.jpeg" style="width:50.0%" /></p>
 <p>拷贝数据</p>
 <pre><code>cp -rf /Volumes/Macintosh\ HD/Users/maverick/Documents /Volumes/TOSHIBA\ EXT/backup</code></pre>
 <p>用其他Mac打开U盘/移动硬盘，确保数据传输成功</p>

@@ -12,19 +12,19 @@
 本文使用的格式是*Mac OS Extended (Case-sensitive, Journaled)*
 
 ### 2. 开机时长按`Command` + `R`，进入**macOS Utilities**
-![macOS Utilities](./macos-utilities.jpeg)
+![](./macos-utilities.jpeg){ width=50% }
 
 若进入**Internet Recovery**，本地Recovery Partition可能已经损坏，尝试走完Internet Recovery流程
 
 ### 3. 进入**Disk Utility**
-![Disk Utility](./disk-utility.png)
+![](./disk-utility.png){ width=50% }
 
 ### 4. 接入U盘/移动硬盘，选择Mount
 
 如果格式不支持，需要格式化erase
 
 ### 5. **macOS Utilities** - Utilities - Terminal，打开终端
-![Terminal](./terminal.jpeg)
+![](./terminal.jpeg){ width=50% }
 
 ### 6. Terminal commands拷贝数据至U盘/移动硬盘
 
@@ -39,7 +39,7 @@ ls /Volumes
 ```
 ls /Volumes/Macintosh\ HD/Users/maverick
 ```
-![Files](./files.jpeg)
+![](./files.jpeg){ width=50% }
 
 拷贝数据
 
