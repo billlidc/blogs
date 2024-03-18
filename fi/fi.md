@@ -6,7 +6,7 @@ When in Canada, Google Fi cellular data under *Simply Unlimited* plan shows up â
 
 ### References
 
-* [](https://support.google.com/fi/answer/6205096?hl=en&co=GENIE.Platform%3DiOS){ width=50% }
+* [Send and receive text messages (SMS & MMS)](https://support.google.com/fi/answer/6205096?hl=en&co=GENIE.Platform%3DiOS){ width=50% }
 
 ### Solution
 
